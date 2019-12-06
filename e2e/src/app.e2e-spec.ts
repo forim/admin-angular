@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('vigor-admin-angular app is running!');
+    expect(page.getTitleText()).toEqual('欢迎使用田一块后台');
   });
 
   afterEach(async () => {

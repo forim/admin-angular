@@ -30,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('vigor-admin-angular app is running!');
+    expect(compiled.querySelector('.jumbotron .display-4').textContent).toContain('欢迎使用田一块后台');
   });
 });
