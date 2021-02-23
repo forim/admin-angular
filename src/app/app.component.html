@@ -1,59 +1,47 @@
+<app-header>
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only">{{ "Loading" | translate }}</span>
+  </div>
+</app-header>
+
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="assets/index.png"/></a>
 </nav>
 <div class="container clearfix">
   <div class="row">
     <div class="col-md-8 col-xs-12">
       <div class="jumbotron">
-        <h1 class="display-4">欢迎使用{{projectName}}后台</h1>
-        <p class="lead">请在父母陪同下登录本站，否则后果自负！</p>
-        <hr class="my-4"/>
+        <h1 class="display-4">{{ "WELCOME" | translate }}</h1>
+        <p class="lead">{{ "WELCOME-NOTICE" | translate }}</p>
+        <hr class="my-4" />
 
-        <p class="lead text-info">如觉害怕，请：</p>
-        <a class="btn btn-info btn-lg" href="https://t1bao.com" role="button">返回主网</a>
+        <p class="lead text-info">{{ "WELCOME-SCARED" | translate }}</p>
+        <a class="btn btn-info btn-lg" href="https://t1bao.com" role="button">{{ "RETURN" | translate }}</a>
       </div>
     </div>
     <div class="col-md-4 col-xs-12">
-      <h1 class="text-center text-secondary">管理员登录</h1>
+      <h1 class="text-center text-secondary">{{"LOGIN-ADMIN" | translate}}</h1>
       <hr class="my-4">
-      <form>
+      <form method="POST" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
-          <label for="acount">管理员帐号：</label>
+          <label for="acount">{{"LOGIN-ADMIN-ACCOUNT" | translate}}</label>
           <input type="text" class="form-control" id="account" aria-describedby="account">
         </div>
         <div class="form-group">
-          <label for="password">密码：</label>
+          <label for="password">{{"LOGIN-ADMIN-PASSWORD" | translate}}</label>
           <input type="password" class="form-control" id="password">
         </div>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="remember">
-          <label class="form-check-label" for="remember">记住登录</label>
+          <label class="form-check-label" for="remember">{{"LOGIN-ADMIN-REMEMBER" | translate}}</label>
         </div>
         <div class="form-group form-check text-center">
-          <button type="submit" class="btn btn-primary text-center">提交</button>
+          <button type="submit" class="btn btn-primary text-center" (click)="login()">{{"LOGIN-ADMIN-SUBMIT" | translate}}</button>
         </div>
       </form>
     </div>
   </div>
 </div>
 
-<hr/>
+<hr />
 
-<div class="container">
-  <div class="row">
-    <div class="col-6">
-      <p class="navbar-text">让问题易解决，让知识有价值，让帮助有回报！ <sub>— 田一块网络</sub>
-      </p>
-    </div>
-    <div class="col-3">
-      <div class="navbar-text text-center">
-          Powered By <a href="https://github.com/calidion/vigor">vigor</a>
-      </div>
-    </div>
-    <div class="col-3">
-      <div class="navbar-text text-center">
-          Based on <a href="https://github.com/calidion/vig">vig</a>
-      </div>
-    </div>
-  </div>
-</div>
+<app-footer></app-footer>

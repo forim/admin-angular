@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row footer" *ngIf="site">
+    <div class="col-12">
+      <p>
+        2018-2021 {{ "COPYRIGHTS" | translate }} &copy;
+        {{ site.name }} &trade;
+      </p>
+    </div>
+    <div class="col-6">
+      <p class="navbar-text">让问题易解决，让知识有价值，让帮助有回报！ <sub>— 田一块网络</sub>
+      </p>
+    </div>
+    <div class="col-3">
+      <div class="navbar-text text-center">
+        Powered By <a href="https://github.com/calidion/vigor">vigor</a>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="navbar-text text-center">
+        Based on <a href="https://github.com/calidion/aex">aex</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-140048281-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-140048281-1");
+</script>

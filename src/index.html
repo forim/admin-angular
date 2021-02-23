@@ -1,12 +1,25 @@
 <!doctype html>
 <html lang="zh">
   <head>
-    <meta charset="utf-8">
-    <title>田一块后台</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <title>{{ 'TITLE' | translate }}</title>
+    <meta name="Description" content="{{ 'DESCRIPTION' | translate }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="assets/index.png" type="image/x-icon"/>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-192x192.png" />
   </head>
   <body>
-    <app-root></app-root>
+    <app-root>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
   </body>
 </html>

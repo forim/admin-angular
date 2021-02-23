@@ -1,0 +1,22 @@
+
+nav {
+  fa-icon {
+    display: inline-block;
+    padding: auto 4px;
+    color: #0d6fc6;
+    width: 1.5rem;
+  }
+}
+
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bolder;  
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@import "../app.component.mobile";
+
