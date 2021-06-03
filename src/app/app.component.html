@@ -24,14 +24,14 @@
       <form method="POST" enctype="application/x-www-form-urlencoded">
         <div class="form-group">
           <label for="acount">{{"LOGIN-ADMIN-ACCOUNT" | translate}}</label>
-          <input type="text" class="form-control" id="account" aria-describedby="account">
+          <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required class="form-control" id="account" aria-describedby="account">
         </div>
         <div class="form-group">
           <label for="password">{{"LOGIN-ADMIN-PASSWORD" | translate}}</label>
-          <input type="password" class="form-control" id="password">
+          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required  class="form-control" id="password">
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="remember">
+          <input type="checkbox" [checked]="remember" class="form-check-input" id="remember">
           <label class="form-check-label" for="remember">{{"LOGIN-ADMIN-REMEMBER" | translate}}</label>
         </div>
         <div class="form-group form-check text-center">

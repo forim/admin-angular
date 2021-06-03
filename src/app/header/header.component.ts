@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
 
   mac = false;
   
-  url = "assets/api/intro";
+  url = "/intro";
   intro;
   constructor(
     private config: ConfigService,

@@ -19,9 +19,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   // Company info
   name = "NAV-NAME";
-  intro;
   url = "home";
-  samples;
+  username;
+  password;
   constructor(
     private translate: TranslateService,
     private titleService: Title,
@@ -33,9 +33,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       translate.get("TITLE").subscribe((res: string) => {
         titleService.setTitle(res);
       });
-      this.config.request("assets/api/intro", (data) => {
-        this.intro = data;
-      });
     });
     router.events.subscribe(event => {
       // console.log(event);
@@ -46,11 +43,6 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.url = tab;
         } else {
           this.url = "home";
-        }
-        if (this.url === "home") {
-          // particlesJS.load("particles-js", "assets/particles.json", () => {
-          // console.log("callback - particles.js config loaded");
-          // });
         }
       }
     });
@@ -97,21 +89,14 @@ export class AppComponent implements OnInit, AfterViewInit {
       locale = this.getLocaleString();
     }
     this.setLocale(locale);
-    this.config.request("assets/api/intro", (data) => {
-      this.intro = data;
-    });
-
-    this.config.request("assets/api/product", (data: any) => {
-      this.samples = data.products;
-    });
   }
 
   login() {
     const body = new HttpParams()
-      .set('username', 'admin')
-      .set('password', '12345');
+      .set('username', this.username)
+      .set('password', this.password);
 
-    this.config.post('/admin/login',
+    this.config.api('/admin/login',
       body.toString(),
       (json) => {
         console.log(json);

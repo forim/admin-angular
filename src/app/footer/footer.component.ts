@@ -30,7 +30,7 @@ export class FooterComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.config.request("assets/api/site", (data) => {
+    this.config.request("/site", (data) => {
       this.site = data;
     });
   }
