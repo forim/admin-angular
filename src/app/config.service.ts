@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ConfigService {
   hash = "#";
   public language = "zh";
-  baseUrl = "http://localhost:8080";
+  baseUrl = "http://localhost:8080/assets/api";
   constructor(
     private http: HttpClient,
   ) {
