@@ -4,44 +4,6 @@
   </div>
 </app-header>
 
-<nav class="navbar navbar-light bg-light">
-</nav>
-<div class="container clearfix">
-  <div class="row">
-    <div class="col-md-8 col-xs-12">
-      <div class="jumbotron">
-        <h1 class="display-4">{{ "WELCOME" | translate }}</h1>
-        <p class="lead">{{ "WELCOME-NOTICE" | translate }}</p>
-        <hr class="my-4" />
-
-        <p class="lead text-info">{{ "WELCOME-SCARED" | translate }}</p>
-        <a class="btn btn-info btn-lg" href="https://t1bao.com" role="button">{{ "RETURN" | translate }}</a>
-      </div>
-    </div>
-    <div class="col-md-4 col-xs-12">
-      <h1 class="text-center text-secondary">{{"LOGIN-ADMIN" | translate}}</h1>
-      <hr class="my-4">
-      <form method="POST" enctype="application/x-www-form-urlencoded">
-        <div class="form-group">
-          <label for="acount">{{"LOGIN-ADMIN-ACCOUNT" | translate}}</label>
-          <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" required class="form-control" id="account" aria-describedby="account">
-        </div>
-        <div class="form-group">
-          <label for="password">{{"LOGIN-ADMIN-PASSWORD" | translate}}</label>
-          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" required  class="form-control" id="password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" [checked]="remember" class="form-check-input" id="remember">
-          <label class="form-check-label" for="remember">{{"LOGIN-ADMIN-REMEMBER" | translate}}</label>
-        </div>
-        <div class="form-group form-check text-center">
-          <button type="submit" class="btn btn-primary text-center" (click)="login()">{{"LOGIN-ADMIN-SUBMIT" | translate}}</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<hr />
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>

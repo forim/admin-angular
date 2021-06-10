@@ -15,6 +15,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './user/login/login.component';
+import { HomeComponent } from './user/home/home.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,7 +25,9 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
