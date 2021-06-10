@@ -95,7 +95,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     const body = new HttpParams()
       .set('username', this.username)
       .set('password', this.password);
-
     this.config.api('/admin/login',
       body.toString(),
       (json) => {

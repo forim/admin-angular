@@ -7,7 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ConfigService {
   hash = "#";
   public language = "zh";
-  baseUrl = "http://localhost:4200/assets/api";
+  assertURL = "http://localhost:4200/assets/api";
+  apiURL = "http://localhost:8080";
   constructor(
     private http: HttpClient,
   ) {
@@ -15,23 +16,21 @@ export class ConfigService {
   }
 
   request(url, cb, params = undefined) {
-    this.http.get(this.baseUrl + url + "/" + this.language + ".json", { params }).subscribe(cb);
+    this.http.get(this.assertURL + url + "/" + this.language + ".json", { params }).subscribe(cb);
   }
 
-  api(url, params, cb) {
-    this.http.get(this.baseUrl + url, { params }).subscribe(cb);
+  api(url, body, cb, params = undefined) {
+    this.post(url, body, cb, params);
   }
 
   post(url, formdata, cb, params = undefined) {
-
-    this.http.post(this.baseUrl + url,
+    this.http.post(this.apiURL + url,
       formdata,
       {
         withCredentials: true,
         headers: new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
       }).subscribe(cb);
-    // this.http.post(this.baseUrl + url, formdata, { params, withCredentials: true }).subscribe(cb);
   }
 
   initAddToHome() {
