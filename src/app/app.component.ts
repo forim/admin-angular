@@ -15,13 +15,9 @@ declare var $: any;
 export class AppComponent implements OnInit, AfterViewInit {
   supportedLanguages = ["en", "zh"];
 
-  active = 0;
-
   // Company info
   name = "NAV-NAME";
   url = "home";
-  username;
-  password;
   constructor(
     private translate: TranslateService,
     private titleService: Title,
@@ -89,22 +85,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       locale = this.getLocaleString();
     }
     this.setLocale(locale);
-  }
-
-  login() {
-    const body = new HttpParams()
-      .set('username', this.username)
-      .set('password', this.password);
-    this.config.api('/admin/login',
-      body.toString(),
-      (json) => {
-        console.log(json);
-        if (json.name !== "Success") {
-          alert(json.message);
-        } else {
-          this.router.navigate(["/user/home"]);
-        }
-      });
-    return false;
   }
 }
