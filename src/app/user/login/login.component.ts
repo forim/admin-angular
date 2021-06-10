@@ -11,6 +11,7 @@ import { ConfigService } from 'src/app/config.service';
 export class LoginComponent implements OnInit {
   username;
   password;
+  remember;
 
   constructor(
     private router: Router,
