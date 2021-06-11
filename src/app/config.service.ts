@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ConfigService {
   hash = "#";
   public language = "zh";
+  public adminName="";
   assertURL = "http://localhost:4200/assets/api";
   apiURL = "http://localhost:8080";
   constructor(

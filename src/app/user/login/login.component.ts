@@ -1,6 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ConfigService } from 'src/app/config.service';
 
 @Component({
@@ -14,9 +15,9 @@ export class LoginComponent implements OnInit {
   remember;
 
   constructor(
+    private translate: TranslateService,
     private router: Router,
     public config: ConfigService
-
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +34,8 @@ export class LoginComponent implements OnInit {
         if (json.name !== "Success") {
           alert(json.message);
         } else {
+          this.config.adminName = json.data.username;
+          console.log(this.config.adminName);
           this.router.navigate(["/user/home"]);
         }
       });

@@ -12,7 +12,7 @@ declare var $: any;
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   supportedLanguages = ["en", "zh"];
 
   // Company info
@@ -64,26 +64,25 @@ export class AppComponent implements OnInit, AfterViewInit {
     localStorage.setItem("locale", locale);
   }
 
-  ngAfterViewInit() {
-    console.log(this.url);
+  ngOnInit() {
+    this.updateLocale();
+  }
 
-    $(".carousel").carousel({
-      interval: 10000
-    });
+  updateLocale() {
+    let locale = localStorage.getItem("locale");
+    if (!locale) {
+      locale = this.getLocaleString();
+    }
+    this.setLocale(locale);
+  }
 
+  onOutletLoaded(component) {
     $(".selectpicker").selectpicker();
     $(".selectpicker").on("changed.bs.select", e => {
       console.log("change detected!");
       console.log(e.target.value);
       this.setLocale(e.target.value);
     });
-  }
-
-  ngOnInit() {
-    let locale = localStorage.getItem("locale");
-    if (!locale) {
-      locale = this.getLocaleString();
-    }
-    this.setLocale(locale);
+    this.updateLocale();
   }
 }
